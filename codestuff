@@ -1,0 +1,41 @@
+input.onButtonPressed(Button.A, function () {
+    basic.showArrow(ArrowNames.North)
+    strip.showRainbow(1, 100)
+    basic.pause(1000)
+    strip.shift(10)
+    strip.show()
+    basic.pause(1000)
+    strip.clear()
+    strip.show()
+})
+input.onButtonPressed(Button.B, function () {
+    for (let index = 0; index < 100; index++) {
+        strip.setPixelColor(0, list[randint(0, list.length)])
+        basic.showString("" + (NA_Letter._pickRandom()))
+        basic.pause(500)
+        strip.shift(1)
+        strip.show()
+        basic.clearScreen()
+    }
+})
+let strip: neopixel.Strip = null
+let NA_Letter: string[] = []
+let list: number[] = []
+basic.showIcon(IconNames.Confused)
+let Temp_Log_22 = Temp_Log_2.createTemp_Log_2(BoardID.zero, ClickID.A)
+list = [
+neopixel.rgb(255, 255, 0),
+neopixel.rgb(255, 0, 0),
+neopixel.rgb(0, 255, 0),
+neopixel.rgb(0, 0, 255)
+]
+NA_Letter = [
+"A",
+"G",
+"T",
+"C"
+]
+strip = neopixel.create(DigitalPin.P0, 24, NeoPixelMode.RGB_RGB)
+basic.forever(function () {
+	
+})
